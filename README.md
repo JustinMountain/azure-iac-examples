@@ -16,3 +16,11 @@ This repo represents an example of a mininal Azure Cloud configuration.
 ## Ansible & Docker
 
 This example has Terraform create a dynamic `hosts` file for Ansible to use. Ansible then installs Docker on the remote server, adds the Ansible user to the docker group, and uses `compose.yml` to deploy an `nginx` proxy to the server.
+
+## The Examples
+
+### v1 Monorepo
+
+This example is the foundational piece of Azure architecture that I created. 
+
+It utilizes `main.tf` and `variables.tf` to stand up an Ubuntu 24.04 VM in Azure. Terraform uses the IP of this VM to create a dynamic `hosts` file for Ansible, which executes a playbook that sets up Docker and an nginx web proxy.

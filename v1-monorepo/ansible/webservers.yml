@@ -1,0 +1,12 @@
+---
+- hosts: webservers
+  roles:
+    - role: geerlingguy.docker
+      become: yes
+      
+    - role: add_ansible_user_docker_group
+      become: yes
+
+    - role: compose_up
+      vars:
+        stack_name: "nginx"
